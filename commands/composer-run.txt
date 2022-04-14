@@ -1,0 +1,16 @@
+----------------
+COMMAND to set up laravel project with the php composer container
+
+docker-compose run --rm composer create-project --prefer-dist laravel/laravel .
+
+------------------
+COMMAND to run only the nginx server, php container & msyql db, in detached mode
+--build tag => forces docker compose to use latest Dockerfile changes to first build containers from latest images
+
+docker-compose up -d --build server
+
+------------------
+COMMAND to run artisan from php for checking db connections & running migration
+
+docker-compose run --rm artisan migrate
+
